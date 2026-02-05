@@ -1,0 +1,54 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-05T11:59:05.394Z",
+  "summary": "REQ-1 is partially implemented: `about.productionPerYear` in `siteContent.ts` is updated to `6000 MT`, but the diff does not provide evidence that all rendered occurrences (Home stats, About text/stats) and repo-wide removal of the exact string `24000 MT` were completed.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Ensure the Home page stats section displays `6000 MT` for “Production Per Year”.",
+      "reason": "No diff evidence shows Home page rendering or any Home page update/verification; only the centralized content value change is shown.",
+      "evidence": [
+        "frontend/src/content/siteContent.ts"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Ensure the About page body text and About page stats display `6000 MT` for annual production/production capacity.",
+      "reason": "No diff evidence shows About page text/stats being updated or verified; only the centralized content value change is shown.",
+      "evidence": [
+        "frontend/src/content/siteContent.ts"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Repo-wide check confirms there are no remaining user-facing occurrences of the exact string `24000 MT`.",
+      "reason": "The diff summary does not include results of any repo-wide search or removal beyond the single `siteContent.ts` change.",
+      "evidence": [
+        "frontend/src/content/siteContent.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Updated/expanded documentation-like summaries about multiple unrelated UI/content changes (e.g., footer/address formatting, hero heading text color, image wiring).",
+      "reason": "These changes are not requested by the BuildRequest (which is limited to replacing “24000 MT” with “6000 MT”).",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Modified project tracking/state metadata.",
+      "reason": "BuildRequest does not ask to update `project_state.json`.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.66,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/content/siteContent.ts",
+    "project_state.json"
+  ]
+}

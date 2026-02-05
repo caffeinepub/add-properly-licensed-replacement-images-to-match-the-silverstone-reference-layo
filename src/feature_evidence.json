@@ -1,0 +1,23 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-centralized-site-content-so-the-production-per-year-value-is-changed-from-24000-mt-to-6000-mt-and-ensure-the-updated-value-appears-everywhere-it-is-rendered-e-g-home-stats-section-and-about-page-text-stats",
+      "featureTitle": "Update the centralized site content so the production-per-year value is changed from “24000 MT” to “6000 MT”, and ensure the updated value appears everywhere it is rendered (e.g., Home stats section and About page text/stats).",
+      "files": [
+        "frontend/src/content/siteContent.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with all static page routes (Home, About, Services, Industries, Contact, NotFound) using SiteLayout as the root component.",
+  "frontend/src/routes/siteRoutes.tsx": "Centralized navigation route definitions exported as an array of NavRoute objects for consistent use across header and other navigation components.",
+  "frontend/src/content/siteContent.ts": "Centralized site content configuration with Shah Minerals company name, +91 8511253115 phone number, shahminerals.info@gmail.com email address, Changodar, Ahmedabad address, and updated production capacity of 6000 MT per year.",
+  "frontend/src/components/layout/SiteLayout.tsx": "Root layout component that wraps all pages with the Header and Footer, using TanStack Router's Outlet for page content rendering.",
+  "frontend/src/components/layout/Header.tsx": "Responsive header component with top contact bar, logo/company name, desktop navigation menu, and mobile sheet navigation using shadcn/ui components.",
+  "frontend/src/components/layout/Footer.tsx": "Responsive footer component with company info, quick links, contact details, and social media links; includes smart address formatting with explicit string[] typing that filters out empty address fields to prevent dangling commas or blank lines.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with hero image overlay, company stats, introduction section with facility image, industries served grid, and call-to-action sections; hero heading now renders \"Welcome to\" in white text while keeping the company name in primary color.",
+  "frontend/src/pages/AboutPage.tsx": "About page with company story, processing facility image, mission/vision/values cards, why-choose-us section, and key statistics display.",
+  "frontend/src/pages/ServicesPage.tsx": "Services page with visual section showing mineral powder and logistics images, detailed service cards for processing/manufacturing/testing/logistics, and product listings.",
+  "frontend/src/pages/IndustriesPage.tsx": "Industries page with industries tiles banner image, overview cards for six key industries, and detailed tabbed content for each sector.",
+  "frontend/src/pages/ContactPage.tsx": "Contact page with contact information cards, warehouse/logistics supporting image, and additional information; includes smart address formatting with explicit string[] typing that conditionally renders address card only when address parts exist and formats them without empty lines.",
+  "frontend/src/pages/NotFoundPage.tsx": "Simple 404 error page with navigation options to return home or go back to the previous page.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file reserved for React Query hooks; currently empty as the application is fully static with no backend data fetching.",
+  "frontend/src/index.css": "Global styles with OKLCH-based green-and-white color system for both light and dark modes, featuring rich green primary colors and clean white backgrounds.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with green-focused color tokens mapped to CSS variables from index.css for consistent design system application.",
+  "frontend/src/content/siteImages.ts": "Centralized image configuration updated to reference uploaded factory images (img2-1.jpg for processing facility, img9.jpg for mineral powder, img11.jpg for packaging logistics) with descriptive alt text for industrial machinery visuals."
+}

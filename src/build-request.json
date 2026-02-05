@@ -1,0 +1,49 @@
+{
+  "kind": "build_request",
+  "title": "Replace all occurrences of “24000 MT” with “6000 MT” in site content",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Update the centralized site content so the production-per-year value is changed from “24000 MT” to “6000 MT”, and ensure the updated value appears everywhere it is rendered (e.g., Home stats section and About page text/stats).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-9",
+          "recent-10"
+        ],
+        "quotes": [
+          "CHANGE 24000 MT TO 6000 MT",
+          "RIGHT NOW"
+        ]
+      },
+      "acceptanceCriteria": [
+        "`frontend/src/content/siteContent.ts` has `about.productionPerYear` set to exactly `6000 MT` (replacing `24000 MT`).",
+        "Home page stats section displays `6000 MT` for “Production Per Year”.",
+        "About page body text and About page stats display `6000 MT` for annual production/production capacity.",
+        "A repo-wide check confirms there are no remaining user-facing occurrences of the exact string `24000 MT`."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under `frontend/src/components/ui` or other immutable paths listed in SYSTEM_CONTEXT."
+  ],
+  "nonGoals": [
+    "No design/layout changes beyond updating the production-per-year text value.",
+    "No backend changes (the site content is static and client-editable via frontend config)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

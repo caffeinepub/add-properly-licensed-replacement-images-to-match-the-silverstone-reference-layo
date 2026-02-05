@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 59,
+  "summary": "Build an exact replica of the Silverstone Industries reference website for a micronised mineral contract manufacturer, changing the color scheme to green and white, with static informational pages, images/visual assets matching the reference layout, and client-edited business details (names/contact/address).",
+  "existing_features": [
+    {
+      "id": "IF-1",
+      "title": "Static multi-page marketing website replica (green/white theme)",
+      "synonyms": [
+        "Reference-site replica",
+        "Silverstone-style static site"
+      ],
+      "description": "Implements a static informational website closely modeled on the provided Silverstone Industries reference layout, using a green/white color scheme and a shared header/footer layout.",
+      "reqIds": [
+        "AR-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "IF-2",
+      "title": "Core pages implemented (Home, About, Services, Industries, Contact, 404)",
+      "synonyms": [
+        "Static pages",
+        "Marketing pages"
+      ],
+      "description": "Adds routed static pages for Home, About, Services, Industries, and Contact, plus a NotFound (404) page, wired via a central routes config.",
+      "reqIds": [
+        "AR-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "IF-3",
+      "title": "Client-editable site content configuration",
+      "synonyms": [
+        "Editable business details",
+        "Content config"
+      ],
+      "description": "Centralizes business/contact/address and other editable copy into a site content/config module so client-specific details can be updated without changing page layouts.",
+      "reqIds": [
+        "AR-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "IF-4",
+      "title": "Replacement visual assets added (generated/licensed equivalents matching reference layout)",
+      "synonyms": [
+        "Site images",
+        "Generated assets",
+        "Visual/hero/section images"
+      ],
+      "description": "Adds replacement images (AI-generated/royalty-free equivalents) to mirror the Silverstone reference layout, wired through a centralized siteImages module and used across core pages while respecting licensing/IP constraints.",
+      "reqIds": [
+        "AR-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "IF-5",
+      "title": "Additional AI/processed replacement images generated and integrated for remaining site slots",
+      "synonyms": [
+        "AR-3 image set",
+        "Remaining image slots filled"
+      ],
+      "description": "Adds and wires additional generated/processed images in frontend/public/assets/generated (including a quartz-lumps hero replacement and a services mineral-powder image) to complete the remaining visual slots while matching the reference layout and respecting IP constraints.",
+      "reqIds": [
+        "AR-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-centralized-site-content-so-the-production-per-year-value-is-changed-from-24000-mt-to-6000-mt-and-ensure-the-updated-value-appears-everywhere-it-is-rendered-e-g-home-stats-section-and-about-page-text-stats",
+      "title": "Update the centralized site content so the production-per-year value is changed from “24000 MT” to “6000 MT”, and ensure the updated value appears everywhere it is rendered (e.g., Home stats section and About page text/stats).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-4",
+      "summary": "Add/replace the About Us page image (generate or provide a properly-licensed equivalent matching the reference layout)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Integrate uploaded images img9.jpg and img11.jpg into the Services page (use as-is, matching the reference layout)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Update the website’s company name, contact details, and address (client-provided) in the centralized site content/config so pages display the correct business information",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Change the Home (front) page “Welcome to” text color to white (match desired styling)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "architectural_notes": [
+    "Reference website URL provided for replication: https://www.silverstoneindustries.com/",
+    "Target: exact visual/design/layout replica of https://www.silverstoneindustries.com/ with color scheme changed to green and white.",
+    "Content approach: client will edit names, contact details, personal information, and address (avoid copying those verbatim).",
+    "Scope: static informational pages only (no interactive features/forms requested).",
+    "Frontend implemented in React + Vite with Tailwind CSS and shadcn/ui components.",
+    "Site uses a shared layout component (Header/Footer) with route-based pages and a central siteRoutes configuration.",
+    "Client-editable copy/details are centralized in a siteContent/config module for easy updates.",
+    "Images/visual assets should mirror the reference layout; use client-provided or properly licensed images rather than copying proprietary assets from the reference site.",
+    "Do not copy/download and reuse proprietary images from the Silverstone reference site; use client-provided assets or properly licensed/AI-generated/royalty-free equivalents that match the layout.",
+    "Decision: use similar replacement images (AI-generated/royalty-free/properly licensed) that match the Silverstone reference layout; do not reuse Silverstone's proprietary images unless permission is provided."
+  ],
+  "known_issues": [
+    "About Us image selection clarified to img2-1.jpg, but placement is still unconfirmed (hero vs secondary/content slot)."
+  ],
+  "isFixRequest": false,
+  "generatedImages": [
+    {
+      "filename": "frontend/public/assets/generated/hero-quartz-lumps.dim_1920x900.png",
+      "description": "Quartz lumps hero image (generated/processed) sized for large hero sections.",
+      "targetWidth": 1920,
+      "targetHeight": 900
+    },
+    {
+      "filename": "frontend/public/assets/generated/services-mineral-powder.dim_1600x900.png",
+      "description": "Services section mineral powder themed replacement image.",
+      "targetWidth": 1600,
+      "targetHeight": 900
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Replace all occurrences of “24000 MT” with “6000 MT” in site content",
+  "clarification_mode": "pro",
+  "clarification_rounds": 0
+}

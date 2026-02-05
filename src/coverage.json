@@ -1,0 +1,40 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-05T11:59:05.428Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Update the centralized site content so the production-per-year value is changed from “24000 MT” to “6000 MT”, and ensure the updated value appears everywhere it is rendered (e.g., Home stats section and About page text/stats).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/content/siteContent.ts",
+          "frontend/scripts/check-legacy-strings.mjs",
+          "frontend/package.json"
+        ],
+        "matchedFiles": [
+          "frontend/src/content/siteContent.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/content/siteContent.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

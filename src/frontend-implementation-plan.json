@@ -1,0 +1,34 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update production-per-year copy from 24000 MT to 6000 MT across site",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Change the centralized annual production value from “24000 MT” to “6000 MT” and ensure all rendered locations reflect the update, with a repo-wide guard against the legacy string.",
+      "acceptanceCriteria": [
+        "`frontend/src/content/siteContent.ts` has `about.productionPerYear` set to exactly `6000 MT` (replacing `24000 MT`).",
+        "Home page stats section displays `6000 MT` for “Production Per Year”.",
+        "About page body text and About page stats display `6000 MT` for annual production/production capacity.",
+        "A repo-wide check confirms there are no remaining user-facing occurrences of the exact string `24000 MT`."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/siteContent.ts",
+          "operation": "modify",
+          "description": "Update `siteContent.about.productionPerYear` from `24000 MT` to exactly `6000 MT` so all pages consuming centralized content (including Home stats and About text/stats) render the corrected value."
+        },
+        {
+          "path": "frontend/scripts/check-legacy-strings.mjs",
+          "operation": "create",
+          "description": "Add a lightweight repo-wide check script that scans frontend source content for the exact legacy string `24000 MT` and fails with a non-zero exit code if found, to support the required verification step."
+        },
+        {
+          "path": "frontend/package.json",
+          "operation": "modify",
+          "description": "Add an npm script (e.g., `check:legacy-strings`) that runs the frontend legacy-string scan so the repo-wide check for `24000 MT` is easy and repeatable."
+        }
+      ]
+    }
+  ]
+}
